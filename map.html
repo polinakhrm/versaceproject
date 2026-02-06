@@ -3,12 +3,257 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Versace Museum - Map</title>
+  <title>Eternal Versace - Interactive Map</title>
   <link rel="stylesheet" href="default.css" id="theme-stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
   <script src="theme-switcher.js"></script>
+  <style>
+    /* Map-specific styles */
+    .map-section {
+      margin: 2rem 0;
+    }
+
+    .map-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      background: var(--card-bg, white);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .floor-plan {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255, 0, 0, 0.7);
+      border: 3px solid white;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+      animation: pulse 2s infinite;
+      z-index: 10;
+    }
+
+    .hotspot:hover {
+      transform: translate(-50%, -50%) scale(1.3);
+      background: rgba(255, 0, 0, 1);
+      box-shadow: 0 6px 25px rgba(255, 0, 0, 0.6);
+      animation: none;
+      z-index: 100;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+      }
+      50% {
+        box-shadow: 0 4px 25px rgba(255, 0, 0, 0.7);
+      }
+    }
+
+    .tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      left: 50%;
+      transform: translate(-50%, -10px);
+    }
+
+    .hotspot:hover .tooltip {
+      opacity: 1;
+      transform: translate(-50%, -45px);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: var(--card-bg, white);
+      color: var(--text-color, #000);
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUp 0.3s ease;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes slideUp {
+      from { 
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to { 
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-content h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: var(--heading-color, #000);
+      border-bottom: 3px solid #d4af37;
+      padding-bottom: 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .modal-content p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: var(--text-color, #333);
+      margin-bottom: 15px;
+    }
+
+    .modal-content ul {
+      margin-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content ul li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2em;
+      color: #666;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .close-btn:hover {
+      background: rgba(0, 0, 0, 0.1);
+      color: #000;
+      transform: rotate(90deg);
+    }
+
+    .legend {
+      margin-top: 30px;
+      padding: 20px;
+      background: var(--card-bg, white);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .legend h3 {
+      margin-bottom: 15px;
+      color: var(--heading-color, #000);
+      font-size: 1.3em;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 20px;
+      font-size: 1em;
+    }
+
+    .legend-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 0, 0, 0.7);
+      border: 2px solid white;
+      margin-right: 10px;
+      box-shadow: 0 2px 10px rgba(255, 0, 0, 0.4);
+    }
+
+    .map-intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .map-intro h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .map-intro p {
+      font-size: 1.1em;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        padding: 25px;
+      }
+      
+      .hotspot {
+        width: 25px;
+        height: 25px;
+      }
+
+      .map-intro h2 {
+        font-size: 2em;
+      }
+
+      .legend-item {
+        display: flex;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- CSS-only theme toggle --> 
@@ -29,7 +274,7 @@
       </div>
     </header>
 
-    <header class="site-header" id="map">
+    <header class="site-header" id="home">
       <div class="container header-inner">
         <div class="brand">
           <span class="brand-name">Eternal Versace</span>
@@ -53,86 +298,96 @@
     </header>
 
     <main class="container">
-      <!-- Interactive Museum Map -->
-      <section id="map" class="map-section" aria-labelledby="map-title">
-        <h2 id="map-title">Museum Map</h2>
-        <p class="muted">The museum’s architectural form was conceived as a tribute to the visual language of Versace. 
-            Its curved lines, layered volumes, and geometric contours echo the brand’s iconic Greek-key (meander) motif, 
-            reinterpreting the pattern not just as decoration but as an organizing principle for the entire building. </p>
-         <p class="muted">The structure itself becomes a symbolic gateway into the world of Versace—where classical heritage, innovation, and bold design coexist.</p>
-         <p class="muted">Inside, the museum unfolds across three distinct halls.
-            The first hall is devoted to the legacy of Gianni Versace, presenting some of his most groundbreaking creations, sketches, and archival pieces that shaped 
-            the identity of modern fashion. The second hall celebrates the most iconic red-carpet looks—dresses and ensembles that defined cultural moments, influenced
-            global trends, and cemented Versace’s status on the world stage. The third hall highlights Donatella Versace’s contemporary vision, showcasing her creative direction, 
-            signature silhouettes, and the evolution of the brand under her leadership.</p>
-        <p class="muted">In addition to the exhibitions, the museum features an exclusive boutique-style shop offering themed souvenirs, curated collectibles, and limited-edition items inspired by the house’s history.
-            Visitors can explore the entire space through an interactive digital map, where each room, display, and individual object can be clicked to reveal detailed stories, images, and contextual information—transforming a simple visit into a dynamic and personalized experience.</p>
+      <!-- Map Intro -->
+      <section class="map-intro">
+        <h2>Interactive Museum Map</h2>
+        <p class="lead">
+        The museum’s architectural form was conceived as a tribute to the visual language of Versace. Its curved lines, layered volumes, and geometric contours echo the brand’s iconic Greek-key (meander) motif, reinterpreting the pattern not just as decoration but as an organizing principle for the entire building.
+        The structure itself becomes a symbolic gateway into the world of Versace—where classical heritage, innovation, and bold design coexist.
+        Inside, the museum unfolds across three distinct halls. The first hall is devoted to the legacy of Gianni Versace, presenting some of his most groundbreaking creations, sketches, and archival pieces that shaped the identity of modern fashion. The second hall celebrates the most iconic red-carpet looks—dresses and ensembles that defined cultural moments, influenced global trends, and cemented Versace’s status on the world stage. The third hall highlights Donatella Versace’s contemporary vision, showcasing her creative direction, signature silhouettes, and the evolution of the brand under her leadership.
+        In addition to the exhibitions, the museum features an exclusive boutique-style shop offering themed souvenirs, curated collectibles, and limited-edition items inspired by the house’s history. Visitors can explore the entire space through an interactive digital map, where each room, display, and individual object can be clicked to reveal detailed stories, images, and contextual information—transforming a simple visit into a dynamic and personalized experience.
+        </p>
+      </section>
 
-        <!-- Floor plan with pins -->
-        <div class="floor-map">
-          <img src="images/floor_plan.png" alt="Versace Museum floor plan" loading="lazy" />
+      <!-- Interactive Map -->
+      <section class="map-section">
+        <div class="map-wrapper">
+          <img src="images/floor_plan.png" alt="Museum Floor Plan" class="floor-plan" id="floorPlan">
+          
+          <!-- Hotspots - positioned based on the floor plan image -->
+          <!-- Top row dots -->
+          <div class="hotspot" style="left: 8%; top: 8%;" onclick="openModal('timeless')">
+            <div class="tooltip">Timeless Red Carpets Looks</div>
+          </div>
+          <div class="hotspot" style="left: 28%; top: 8%;" onclick="openModal('timeless')">
+            <div class="tooltip">Timeless Red Carpets Looks</div>
+          </div>
+          <div class="hotspot" style="left: 48%; top: 8%;" onclick="openModal('timeless')">
+            <div class="tooltip">Timeless Red Carpets Looks</div>
+          </div>
+          <div class="hotspot" style="left: 68%; top: 8%;" onclick="openModal('timeless')">
+            <div class="tooltip">Timeless Red Carpets Looks</div>
+          </div>
+          <div class="hotspot" style="left: 92%; top: 13%;" onclick="openModal('donatella')">
+            <div class="tooltip">Donatella's Story</div>
+          </div>
 
-          <!-- Room A pins -->
-          <button type="button" class="map-pin map-pin--A" data-item="exp-01" data-room="A" style="--x:9%; --y:92%;" aria-label="Room A — Childhood Photo (1988)">
-            <span>01</span>
-          </button>
-          <button type="button" class="map-pin map-pin--A" data-item="exp-02" data-room="A" style="--x:9%; --y:77%;" aria-label="Room A — First Collection (1989)">
-            <span>02</span>
-          </button>
-          <button type="button" class="map-pin map-pin--A" data-item="exp-03" data-room="A" style="--x:9%; --y:62%;" aria-label="Room A — Gianni Versace Perfume (1980)">
-            <span>03</span>
-          </button>
-          <button type="button" class="map-pin map-pin--A" data-item="exp-04" data-room="A" style="--x:9%; --y:48%;" aria-label="Room A — Bondage Dress (1991)">
-            <span>04</span>
-          </button>
-          <button type="button" class="map-pin map-pin--A" data-item="exp-05" data-room="A" style="--x:27%; --y:48%;" aria-label="Room A — Mesh Dress (1992)">
-            <span>05</span>
-          </button>
-          <button type="button" class="map-pin map-pin--A" data-item="exp-06" data-room="A" style="--x:27%; --y:62%;" aria-label="Room A — Striped Suit (1993)">
-            <span>06</span>
-          </button>
-          <button type="button" class="map-pin map-pin--A" data-item="exp-07" data-room="A" style="--x:27%; --y:77%;" aria-label="Room A — Sheath Dress (1994)">
-            <span>07</span>
-          </button>
+          <!-- Middle row dots -->
+          <div class="hotspot" style="left: 38%; top: 23%;" onclick="openModal('fountain')">
+            <div class="tooltip">Central Fountain</div>
+          </div>
+          <div class="hotspot" style="left: 58%; top: 23%;" onclick="openModal('fountain')">
+            <div class="tooltip">Central Fountain</div>
+          </div>
 
-          <!-- Room B pins -->
-          <button type="button" class="map-pin map-pin--B" data-item="exp-08" data-room="B" style="--x:9%; --y:9%;" aria-label="Room B — Leather Trench (1995)">
-            <span>08</span>
-          </button>
-          <button type="button" class="map-pin map-pin--B" data-item="exp-09" data-room="B" style="--x:23%; --y:9%;" aria-label="Room B — Print Sarong (1996)">
-            <span>09</span>
-          </button>
-          <button type="button" class="map-pin map-pin--B" data-item="exp-10" data-room="B" style="--x:30%; --y:25%;" aria-label="Room B — Train Dress (1997)">
-            <span>10</span>
-          </button>
-          <button type="button" class="map-pin map-pin--B" data-item="exp-11" data-room="B" style="--x:37%; --y:9%;" aria-label="Room B — Corset Top (1998)">
-            <span>11</span>
-          </button>
-          <button type="button" class="map-pin map-pin--B" data-item="exp-12" data-room="B" style="--x:43%; --y:25%;" aria-label="Room B — Silk Trousers (1999)">
-            <span>12</span>
-          </button>
-          <button type="button" class="map-pin map-pin--B" data-item="exp-13" data-room="B" style="--x:50%; --y:9%;" aria-label="Room B — Cutout Dress (2000)">
-            <span>13</span>
-          </button>
+          <!-- Left side dots (Gianni's Story) -->
+          <div class="hotspot" style="left: 8%; top: 38%;" onclick="openModal('gianni')">
+            <div class="tooltip">Gianni's Story</div>
+          </div>
+          <div class="hotspot" style="left: 35%; top: 38%;" onclick="openModal('gianni')">
+            <div class="tooltip">Gianni's Story</div>
+          </div>
+          <div class="hotspot" style="left: 8%; top: 53%;" onclick="openModal('gianni')">
+            <div class="tooltip">Gianni's Story</div>
+          </div>
+          <div class="hotspot" style="left: 35%; top: 53%;" onclick="openModal('gianni')">
+            <div class="tooltip">Gianni's Story</div>
+          </div>
+          <div class="hotspot" style="left: 8%; top: 68%;" onclick="openModal('gianni')">
+            <div class="tooltip">Gianni's Story</div>
+          </div>
+          <div class="hotspot" style="left: 35%; top: 68%;" onclick="openModal('gianni')">
+            <div class="tooltip">Gianni's Story</div>
+          </div>
+          <div class="hotspot" style="left: 8%; top: 83%;" onclick="openModal('gianni')">
+            <div class="tooltip">Gianni's Story</div>
+          </div>
+          <div class="hotspot" style="left: 35%; top: 83%;" onclick="openModal('gianni')">
+            <div class="tooltip">Gianni's Story</div>
+          </div>
 
-          <!-- Room C pins -->
-          <button type="button" class="map-pin map-pin--C" data-item="exp-14" data-room="C" style="--x:70%; --y:14%;" aria-label="Room C — Velvet Set (2002)">
-            <span>14</span>
-          </button>
-          <button type="button" class="map-pin map-pin--C" data-item="exp-15" data-room="C" style="--x:53%; --y:34%;" aria-label="Room C — Crystal Jumpsuit (2003)">
-            <span>15</span>
-          </button>
-          <button type="button" class="map-pin map-pin--C" data-item="exp-16" data-room="C" style="--x:54%; --y:60%;" aria-label="Room C — One-Shoulder Mini (2004)">
-            <span>16</span>
-          </button>
-          <button type="button" class="map-pin map-pin--C" data-item="exp-17" data-room="C" style="--x:64%; --y:60%;" aria-label="Room C — Cashmere Cape (2005)">
-            <span>17</span>
-          </button>
-          <button type="button" class="map-pin map-pin--C" data-item="exp-18" data-room="C" style="--x:70%; --y:35%;" aria-label="Room C — Cashmere Cape (2005)">
-            <span>18</span>
-          </button>
+          <!-- Right side dots (Donatella's Story area) -->
+          <div class="hotspot" style="left: 70%; top: 33%;" onclick="openModal('donatella')">
+            <div class="tooltip">Donatella's Story</div>
+          </div>
+          <div class="hotspot" style="left: 92%; top: 33%;" onclick="openModal('donatella')">
+            <div class="tooltip">Donatella's Story</div>
+          </div>
+          <div class="hotspot" style="left: 70%; top: 53%;" onclick="openModal('store')">
+            <div class="tooltip">Museum Store</div>
+          </div>
+          <div class="hotspot" style="left: 85%; top: 53%;" onclick="openModal('store')">
+            <div class="tooltip">Museum Store</div>
+          </div>
         </div>
 
+        <div class="legend">
+          <h3>Legend</h3>
+          <div class="legend-item">
+            <div class="legend-dot"></div>
+            <span>Interactive Point - Click for more information</span>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -141,7 +396,7 @@
         <div>
           <h3>Contacts</h3>
           <p>
-            Versace Museum<br/>
+            Eternal Versace<br/>
           </p>
           <p>
             Tel: <a href="tel:+390200000000">+39 02 0000 0000</a><br/>
@@ -161,26 +416,117 @@
           </p>
         </div>
       </div>
-      <p class="tiny">© 2025 Versace Museum</p>
+      <p class="tiny">© 2025 Eternal Versace</p>
     </footer>
   </div>
 
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
   <script>
-    // Handle map pin clicks - navigate to collection page with hash
-    document.addEventListener('DOMContentLoaded', function() {
-      const mapPins = document.querySelectorAll('.map-pin');
+    const contentData = {
+      timeless: {
+        title: "Timeless Red Carpets Looks",
+        content: `
+          <p>This section celebrates the most iconic looks that have graced red carpets around the world. Here you can admire the garments that have made fashion history, worn by the most famous stars of cinema, music, and entertainment.</p>
+          <p>Each piece tells a story of elegance, audacity, and innovation that has defined the Versace style over the decades.</p>
+          <p>From silk and metallic creations to dresses decorated with the iconic Baroque prints, these looks represent the essence of Versace glamour.</p>
+        `
+      },
+      gianni: {
+        title: "Gianni's Story",
+        content: `
+          <p>Gianni Versace (1946-1997) was one of the greatest fashion designers of the 20th century. His revolutionary vision transformed fashion into art.</p>
+          <p>Born in Reggio Calabria, Gianni founded the Versace fashion house in 1978 in Milan. His unique aesthetic combined classical luxury with bold innovation, creating an unmistakable style.</p>
+          <p>In this section you can discover:</p>
+          <ul>
+            <li>His early revolutionary collections</li>
+            <li>The evolution of the Medusa logo</li>
+            <li>Collaborations with artists and photographers</li>
+            <li>Key moments of his career</li>
+          </ul>
+          <p>His legacy continues to inspire the fashion world today.</p>
+        `
+      },
+      donatella: {
+        title: "Donatella's Story",
+        content: `
+          <p>Donatella Versace carried forward her brother Gianni's vision after his death in 1997, becoming Creative Director of the maison.</p>
+          <p>With her bold and provocative style, Donatella has kept the Versace spirit alive while adapting it to modern times. She has taken the brand to new heights of global success.</p>
+          <p>This section explores:</p>
+          <ul>
+            <li>Her most iconic collections</li>
+            <li>The evolution of the brand in the digital era</li>
+            <li>Collaborations with new generations of stars</li>
+            <li>The impact on the contemporary fashion system</li>
+          </ul>
+          <p>Donatella represents the strength and continuity of the Versace dynasty.</p>
+        `
+      },
+      fountain: {
+        title: "Central Fountain",
+        content: `
+          <p>The central fountain is the symbolic heart of the museum, a tribute to the neoclassical aesthetic that has always inspired the House of Versace.</p>
+          <p>This architectural element represents the fusion of classicism and modernity, a recurring theme in Versace creations.</p>
+          <p>The flowing water represents the continuous flow of creativity and innovation that characterizes the brand.</p>
+        `
+      },
+      store: {
+        title: "Museum Store",
+        content: `
+          <p>Welcome to the Museum Store, where you can take home a piece of Versace history.</p>
+          <p>Here you will find:</p>
+          <ul>
+            <li>Limited reproductions of iconic pieces</li>
+            <li>Books and collection catalogs</li>
+            <li>Exclusive museum accessories</li>
+            <li>Art prints and photographs</li>
+            <li>Design objects and souvenirs</li>
+          </ul>
+          <p>Every purchase supports the conservation of Versace's cultural heritage.</p>
+        `
+      }
+    };
+
+    function openModal(section) {
+      const modal = document.getElementById('modal');
+      const modalBody = document.getElementById('modalBody');
+      const data = contentData[section];
       
-      mapPins.forEach(pin => {
-        pin.addEventListener('click', function() {
-          const itemId = this.getAttribute('data-item');
-          if (itemId) {
-            // Navigate to collection page with hash
-            window.location.href = `collection.html#${itemId}`;
-          }
-        });
-      });
+      modalBody.innerHTML = `
+        <h2>${data.title}</h2>
+        ${data.content}
+      `;
+      
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
     });
   </script>
 </body>
 </html>
-
