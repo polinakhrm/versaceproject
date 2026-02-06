@@ -1,0 +1,405 @@
+        <div class="tab-content" id="content-redcarpet">
+          <div class="grid">
+            
+    <article class="card" id="exp-05" data-room="A" data-red="true" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r5/480/320" alt="Exhibit 05" loading="lazy" />
+        <span class="badge badge--room">A</span>
+        <span class="badge badge--red">Red Carpet</span>
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Mesh Dress <span class="year">(1992)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1005.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Red Carpet</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> A</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-10" data-room="B" data-red="true" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r10/480/320" alt="Exhibit 10" loading="lazy" />
+        <span class="badge badge--room">B</span>
+        <span class="badge badge--red">Red Carpet</span>
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Train Dress <span class="year">(1997)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1010.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Red Carpet</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> B</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-13" data-room="B" data-red="true" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r13/480/320" alt="Exhibit 13" loading="lazy" />
+        <span class="badge badge--room">B</span>
+        <span class="badge badge--red">Red Carpet</span>
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Cutout Dress <span class="year">(2000)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1013.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Red Carpet</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> B</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-16" data-room="C" data-red="true" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r16/480/320" alt="Exhibit 16" loading="lazy" />
+        <span class="badge badge--room">C</span>
+        <span class="badge badge--red">Red Carpet</span>
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Crystal Jumpsuit <span class="year">(2003)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1016.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Red Carpet</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> C</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-17" data-room="C" data-red="true" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r17/480/320" alt="Exhibit 17" loading="lazy" />
+        <span class="badge badge--room">C</span>
+        <span class="badge badge--red">Red Carpet</span>
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">One-Shoulder Mini <span class="year">(2004)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1017.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Red Carpet</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> C</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-19" data-room="C" data-red="true" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r19/480/320" alt="Exhibit 19" loading="lazy" />
+        <span class="badge badge--room">C</span>
+        <span class="badge badge--red">Red Carpet</span>
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Stiletto Heels <span class="year">(2006)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1019.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Red Carpet</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> C</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-01" data-room="A" data-red="false" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r1/480/320" alt="Exhibit 01" loading="lazy" />
+        <span class="badge badge--room">A</span>
+        
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Draped Dress <span class="year">(1988)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1001.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> A</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-02" data-room="A" data-red="false" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r2/480/320" alt="Exhibit 02" loading="lazy" />
+        <span class="badge badge--room">A</span>
+        
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Gold-Button Jacket <span class="year">(1989)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1002.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> A</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-03" data-room="A" data-red="false" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r3/480/320" alt="Exhibit 03" loading="lazy" />
+        <span class="badge badge--room">A</span>
+        
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Satin Blouse <span class="year">(1990)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1003.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> A</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-04" data-room="A" data-red="false" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r4/480/320" alt="Exhibit 04" loading="lazy" />
+        <span class="badge badge--room">A</span>
+        
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Medallion Belt <span class="year">(1991)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1004.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> A</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-06" data-room="A" data-red="false" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r6/480/320" alt="Exhibit 06" loading="lazy" />
+        <span class="badge badge--room">A</span>
+        
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Striped Suit <span class="year">(1993)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1006.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> A</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-07" data-room="A" data-red="false" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r7/480/320" alt="Exhibit 07" loading="lazy" />
+        <span class="badge badge--room">A</span>
+        
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Sheath Dress <span class="year">(1994)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1007.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> A</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-08" data-room="B" data-red="false" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r8/480/320" alt="Exhibit 08" loading="lazy" />
+        <span class="badge badge--room">B</span>
+        
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Leather Trench <span class="year">(1995)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1008.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> B</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-09" data-room="B" data-red="false" data-don="false">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r9/480/320" alt="Exhibit 09" loading="lazy" />
+        <span class="badge badge--room">B</span>
+        
+        
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Print Sarong <span class="year">(1996)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1009.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> No</li>
+          <li><strong>Room:</strong> B</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-11" data-room="B" data-red="false" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r11/480/320" alt="Exhibit 11" loading="lazy" />
+        <span class="badge badge--room">B</span>
+        
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Corset Top <span class="year">(1998)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1011.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> B</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-12" data-room="B" data-red="false" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r12/480/320" alt="Exhibit 12" loading="lazy" />
+        <span class="badge badge--room">B</span>
+        
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Silk Trousers <span class="year">(1999)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1012.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> B</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-14" data-room="B" data-red="false" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r14/480/320" alt="Exhibit 14" loading="lazy" />
+        <span class="badge badge--room">B</span>
+        
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Cocoon Coat <span class="year">(2001)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1014.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> B</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-15" data-room="C" data-red="false" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r15/480/320" alt="Exhibit 15" loading="lazy" />
+        <span class="badge badge--room">C</span>
+        
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Velvet Set <span class="year">(2002)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1015.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> C</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-18" data-room="C" data-red="false" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r18/480/320" alt="Exhibit 18" loading="lazy" />
+        <span class="badge badge--room">C</span>
+        
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Cashmere Cape <span class="year">(2005)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1018.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> C</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" id="exp-20" data-room="C" data-red="false" data-don="true">
+      <div class="card-media">
+        <img src="https://picsum.photos/seed/r20/480/320" alt="Exhibit 20" loading="lazy" />
+        <span class="badge badge--room">C</span>
+        
+        <span class="badge badge--don">Donatella</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Chain Bag <span class="year">(2007)</span></h3>
+        <p class="desc desc--child">Look at the shape and color — what makes it special?</p>
+        <p class="desc desc--regular">A key piece. Notice the materials and the context of its appearance.</p>
+        <p class="desc desc--expert">Technical note: provenance — private collection; condition — stabilized; publications — catalogs 2012, 2018; see holding #1020.</p>
+        <ul class="meta">
+          <li><strong>Category:</strong> Main collection</li>
+          <li><strong>Donatella line:</strong> Yes</li>
+          <li><strong>Room:</strong> C</li>
+        </ul>
+      </div>
+    </article>
+    
+          </div>
+        </div>

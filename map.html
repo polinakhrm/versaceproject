@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Versace Museum - Map</title>
+  <link rel="stylesheet" href="default.css" id="theme-stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+  <script src="theme-switcher.js"></script>
+</head>
+<body>
+  <!-- CSS-only theme toggle --> 
+  <input type="radio" name="theme" id="theme-default" class="theme-radio" checked>
+  <input type="radio" name="theme" id="theme-eighties" class="theme-radio">
+  <input type="radio" name="theme" id="theme-nineties" class="theme-radio">
+  <input type="radio" name="theme" id="theme-oos" class="theme-radio">
+ 
+  <div class="page">
+    <header class="theme-header" id="theme">
+      <h1>Choose Your Theme</h1>
+      <div class="theme-switch">
+        <label for="theme-default" class="opt light">📱</label>
+        <label for="theme-eighties" class="opt dark">🛼</label>
+        <label for="theme-nineties" class="opt mid">📼</label>
+        <label for="theme-oos" class="opt vivid">💿</label>
+        <span class="knob"></span>
+      </div>
+    </header>
+
+    <header class="site-header" id="map">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-name">Eternal Versace</span>
+        </div>
+
+        <nav class="main-nav" aria-label="Primary">
+          <a href="home.html">Home</a>
+          <a href="map.html" class="active">Map</a>
+          <a href="collection.html">Collection</a>
+          <a href="aboutus.html">About Us</a>
+        </nav>
+
+        <div class="theme-switch">
+          <label for="theme-default" class="opt light">📱</label>
+          <label for="theme-eighties" class="opt dark">🛼</label>
+          <label for="theme-nineties" class="opt mid">📼</label>
+          <label for="theme-oos" class="opt vivid">💿</label>
+          <span class="knob"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Interactive Museum Map -->
+      <section id="map" class="map-section" aria-labelledby="map-title">
+        <h2 id="map-title">Museum Map</h2>
+        <p class="muted">The museum’s architectural form was conceived as a tribute to the visual language of Versace. 
+            Its curved lines, layered volumes, and geometric contours echo the brand’s iconic Greek-key (meander) motif, 
+            reinterpreting the pattern not just as decoration but as an organizing principle for the entire building. </p>
+         <p class="muted">The structure itself becomes a symbolic gateway into the world of Versace—where classical heritage, innovation, and bold design coexist.</p>
+         <p class="muted">Inside, the museum unfolds across three distinct halls.
+            The first hall is devoted to the legacy of Gianni Versace, presenting some of his most groundbreaking creations, sketches, and archival pieces that shaped 
+            the identity of modern fashion. The second hall celebrates the most iconic red-carpet looks—dresses and ensembles that defined cultural moments, influenced
+            global trends, and cemented Versace’s status on the world stage. The third hall highlights Donatella Versace’s contemporary vision, showcasing her creative direction, 
+            signature silhouettes, and the evolution of the brand under her leadership.</p>
+        <p class="muted">In addition to the exhibitions, the museum features an exclusive boutique-style shop offering themed souvenirs, curated collectibles, and limited-edition items inspired by the house’s history.
+            Visitors can explore the entire space through an interactive digital map, where each room, display, and individual object can be clicked to reveal detailed stories, images, and contextual information—transforming a simple visit into a dynamic and personalized experience.</p>
+
+        <!-- Floor plan with pins -->
+        <div class="floor-map">
+          <img src="images/floor_plan.png" alt="Versace Museum floor plan" loading="lazy" />
+
+          <!-- Room A pins -->
+          <button type="button" class="map-pin map-pin--A" data-item="exp-01" data-room="A" style="--x:9%; --y:92%;" aria-label="Room A — Childhood Photo (1988)">
+            <span>01</span>
+          </button>
+          <button type="button" class="map-pin map-pin--A" data-item="exp-02" data-room="A" style="--x:9%; --y:77%;" aria-label="Room A — First Collection (1989)">
+            <span>02</span>
+          </button>
+          <button type="button" class="map-pin map-pin--A" data-item="exp-03" data-room="A" style="--x:9%; --y:62%;" aria-label="Room A — Gianni Versace Perfume (1980)">
+            <span>03</span>
+          </button>
+          <button type="button" class="map-pin map-pin--A" data-item="exp-04" data-room="A" style="--x:9%; --y:48%;" aria-label="Room A — Bondage Dress (1991)">
+            <span>04</span>
+          </button>
+          <button type="button" class="map-pin map-pin--A" data-item="exp-05" data-room="A" style="--x:27%; --y:48%;" aria-label="Room A — Mesh Dress (1992)">
+            <span>05</span>
+          </button>
+          <button type="button" class="map-pin map-pin--A" data-item="exp-06" data-room="A" style="--x:27%; --y:62%;" aria-label="Room A — Striped Suit (1993)">
+            <span>06</span>
+          </button>
+          <button type="button" class="map-pin map-pin--A" data-item="exp-07" data-room="A" style="--x:27%; --y:77%;" aria-label="Room A — Sheath Dress (1994)">
+            <span>07</span>
+          </button>
+
+          <!-- Room B pins -->
+          <button type="button" class="map-pin map-pin--B" data-item="exp-08" data-room="B" style="--x:9%; --y:9%;" aria-label="Room B — Leather Trench (1995)">
+            <span>08</span>
+          </button>
+          <button type="button" class="map-pin map-pin--B" data-item="exp-09" data-room="B" style="--x:23%; --y:9%;" aria-label="Room B — Print Sarong (1996)">
+            <span>09</span>
+          </button>
+          <button type="button" class="map-pin map-pin--B" data-item="exp-10" data-room="B" style="--x:30%; --y:25%;" aria-label="Room B — Train Dress (1997)">
+            <span>10</span>
+          </button>
+          <button type="button" class="map-pin map-pin--B" data-item="exp-11" data-room="B" style="--x:37%; --y:9%;" aria-label="Room B — Corset Top (1998)">
+            <span>11</span>
+          </button>
+          <button type="button" class="map-pin map-pin--B" data-item="exp-12" data-room="B" style="--x:43%; --y:25%;" aria-label="Room B — Silk Trousers (1999)">
+            <span>12</span>
+          </button>
+          <button type="button" class="map-pin map-pin--B" data-item="exp-13" data-room="B" style="--x:50%; --y:9%;" aria-label="Room B — Cutout Dress (2000)">
+            <span>13</span>
+          </button>
+
+          <!-- Room C pins -->
+          <button type="button" class="map-pin map-pin--C" data-item="exp-14" data-room="C" style="--x:70%; --y:14%;" aria-label="Room C — Velvet Set (2002)">
+            <span>14</span>
+          </button>
+          <button type="button" class="map-pin map-pin--C" data-item="exp-15" data-room="C" style="--x:53%; --y:34%;" aria-label="Room C — Crystal Jumpsuit (2003)">
+            <span>15</span>
+          </button>
+          <button type="button" class="map-pin map-pin--C" data-item="exp-16" data-room="C" style="--x:54%; --y:60%;" aria-label="Room C — One-Shoulder Mini (2004)">
+            <span>16</span>
+          </button>
+          <button type="button" class="map-pin map-pin--C" data-item="exp-17" data-room="C" style="--x:64%; --y:60%;" aria-label="Room C — Cashmere Cape (2005)">
+            <span>17</span>
+          </button>
+          <button type="button" class="map-pin map-pin--C" data-item="exp-18" data-room="C" style="--x:70%; --y:35%;" aria-label="Room C — Cashmere Cape (2005)">
+            <span>18</span>
+          </button>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Contacts</h3>
+          <p>
+            Versace Museum<br/>
+          </p>
+          <p>
+            Tel: <a href="tel:+390200000000">+39 02 0000 0000</a><br/>
+            Email: <a href="mailto:info@museo.example">info@museo.example</a>
+          </p>
+        </div>
+        <div>
+          <h3>Opening hours</h3>
+          <p>Mon–Sun: 10:00–19:00<br/>Thu: until 21:00</p>
+        </div>
+        <div>
+          <h3>Socials</h3>
+          <p class="socials">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="X / Twitter">X</a>
+          </p>
+        </div>
+      </div>
+      <p class="tiny">© 2025 Versace Museum</p>
+    </footer>
+  </div>
+
+  <script>
+    // Handle map pin clicks - navigate to collection page with hash
+    document.addEventListener('DOMContentLoaded', function() {
+      const mapPins = document.querySelectorAll('.map-pin');
+      
+      mapPins.forEach(pin => {
+        pin.addEventListener('click', function() {
+          const itemId = this.getAttribute('data-item');
+          if (itemId) {
+            // Navigate to collection page with hash
+            window.location.href = `collection.html#${itemId}`;
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eternal Versace - Versace Medusa Aevitas Satin Shoes </title>
+  <link rel="stylesheet" href="default.css" id="theme-stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+  <script src="theme-switcher.js"></script>
+</head>
+<body>
+  <!-- CSS-only theme toggle --> 
+  <input type="radio" name="theme" id="theme-default" class="theme-radio" checked>
+  <input type="radio" name="theme" id="theme-eighties" class="theme-radio">
+  <input type="radio" name="theme" id="theme-nineties" class="theme-radio">
+  <input type="radio" name="theme" id="theme-oos" class="theme-radio">
+ 
+  <div class="page">
+    <header class="theme-header" id="theme">
+      <h1>Choose Your Theme</h1>
+      <div class="theme-switch">
+        <label for="theme-default" class="opt light">📱</label>
+        <label for="theme-eighties" class="opt dark">🛼</label>
+        <label for="theme-nineties" class="opt mid">📼</label>
+        <label for="theme-oos" class="opt vivid">💿</label>
+        <span class="knob"></span>
+      </div>
+    </header>
+
+    <header class="site-header" id="home">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-name">Eternal Versace</span>
+        </div>
+
+        <nav class="main-nav" aria-label="Primary">
+          <a href="home.html">Home</a>
+          <a href="map.html">Map</a>
+          <a href="collection.html">Collection</a>
+          <a href="aboutus.html">About Us</a>
+        </nav>
+
+        <div class="theme-switch">
+          <label for="theme-default" class="opt light">📱</label>
+          <label for="theme-eighties" class="opt dark">🛼</label>
+          <label for="theme-nineties" class="opt mid">📼</label>
+          <label for="theme-oos" class="opt vivid">💿</label>
+          <span class="knob"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="item-detail">
+        <h2 style="text-align: left; margin-bottom: 24px; color: #ffffff;">Versace Medusa Aevitas Satin Shoes, 2021</h2>
+        
+        <div class="item-content">
+          <div class="item-image">
+            <img src="images/exhibits/shoes.avif" alt="Versace Medusa Aevitas Satin Shoes" />
+          </div>
+          <div class="item-text">
+            <select class="visitor-select" id="visitor-select" style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid var(--line); font-size: 16px; background: #ffffff; color: var(--text);">
+              <option value="child">Child</option>
+              <option value="general" selected>General visitor</option>
+              <option value="expert">Expert</option>
+            </select>
+           <div id="text-content">
+             <div id="text-child" class="visitor-text" style="display: none;">
+               <p>These shoes are super tall and shiny, almost like wearing stilts! They have the Medusa face on them and make you feel like a star.</p>
+             </div>
+             <div id="text-general" class="visitor-text" style="display: block;">
+               <p>These are the Medusa Aevitas shoes, known for their huge platforms and high heels. Made of shiny satin and decorated with the Medusa emblem, they became a hit for their bold, glamorous look.</p>
+             </div>
+             <div id="text-expert" class="visitor-text" style="display: none;">
+               <p>The Medusa Aevitas platform pumps epitomize Versace’s 21st-century maximalism. Featuring towering block heels, double platforms, satin finish, and an ankle strap adorned with the Medusa medallion, they reinterpret 1970s disco aesthetics for a contemporary audience. The exaggerated scale symbolizes empowerment through height and presence.</p>
+             </div>
+           </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Contacts</h3>
+          <p>
+            Eternal Versace<br/>
+          </p>
+          <p>
+            Tel: <a href="tel:+390200000000">+39 02 0000 0000</a><br/>
+            Email: <a href="mailto:info@museo.example">info@museo.example</a>
+          </p>
+        </div>
+        <div>
+          <h3>Opening hours</h3>
+          <p>Mon–Sun: 10:00–19:00<br/>Thu: until 21:00</p>
+        </div>
+        <div>
+          <h3>Socials</h3>
+          <p class="socials">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="X / Twitter">X</a>
+          </p>
+        </div>
+      </div>
+      <p class="tiny">© 2025 Eternal Versace</p>
+    </footer>
+  </div>
+  <script>
+    (function() {
+      const select = document.getElementById('visitor-select');
+      const textChild = document.getElementById('text-child');
+      const textGeneral = document.getElementById('text-general');
+      const textExpert = document.getElementById('text-expert');
+      
+      if (!select || !textChild || !textGeneral || !textExpert) {
+        return;
+      }
+      
+      function updateText() {
+        const value = select.value;
+        
+        // Hide all text sections
+        textChild.style.display = 'none';
+        textGeneral.style.display = 'none';
+        textExpert.style.display = 'none';
+        
+        // Show the selected text section
+        if (value === 'child') {
+          textChild.style.display = 'block';
+        } else if (value === 'general') {
+          textGeneral.style.display = 'block';
+        } else if (value === 'expert') {
+          textExpert.style.display = 'block';
+        }
+      }
+      
+      // Initialize on page load
+      updateText();
+      
+      // Update when selection changes
+      select.addEventListener('change', updateText);
+    })();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,248 @@
+/* ===== Theming system: CSS variables ===== */
+:root{
+  /* Default */
+  --bg:#fbfbfe; --text:#172029; --muted:#000000;
+  --card:#ffffff; --line:rgba(23,32,41,.12);
+  --glass:rgba(12, 55, 25, 0.754);
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+
+  --accent:#1c2cc2; --accent-2:#781111; --accent-3:#eab121; --accent-4:#6d0fb5; --accent-5:#19810e;
+
+}
+.theme-radio{ position:fixed; left:-9999px; top:-9999px;}
+
+  /* Default */
+  #theme-default:checked ~ .page{
+  --bg:#fbfbfe; --text:#172029; --muted:#000000;
+  --card:#ffffff; --line:rgba(23,32,41,.12);
+  --glass:rgba(12, 55, 25, 0.754);
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+
+  --accent:#1c2cc2; --accent-2:#781111; --accent-3:#eab121; --accent-4:#6d0fb5; --accent-5:#19810e;
+
+ --bg-photo:url('/Users/User/Desktop/versace project/images/Medusa_Amplified.jpg');
+  background:#ffffff
+}
+
+/* Eighties */
+#theme-eighties:checked ~ .page{
+    --bg:#0f1217; --text:#000000; --muted:#a4aebb;
+    --card:#ffffff; --line:rgba(230,234,240,.12);
+    --glass:rgba(21,26,34,.7);
+    --shadow:0 10px 30px rgba(0,0,0,.45);
+
+    --accent:#7f8cff; --accent-2:#ff77b0; --accent-3:#28d3b2; --accent-4:#ffc35a; --accent-5:#b08cff;
+    --bg-photo:url('/Users/User/Desktop/versace project/images/eighties.png');
+   background: 
+    linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), 
+    url('image.jpg') center/cover no-repeat;
+  background:#ffffff
+}
+
+/* Nineties */
+#theme-nineties:checked ~ .page{
+    --bg:#0f1217; --text:#e6eaf0; --muted:#a4aebb;
+    --card:#424242; --line:rgba(230,234,240,.12);
+    --glass:rgba(21,26,34,.7);
+    --shadow:0 10px 30px rgba(0,0,0,.45);
+
+    --accent:#7f8cff; --accent-2:#ff77b0; --accent-3:#28d3b2; --accent-4:#ffc35a; --accent-5:#b08cff;
+    --bg-photo:url('/Users/User/Desktop/versace project/images/nineties.jpeg');
+   background:#000000
+}
+
+/* oos */
+#theme-oos:checked ~ .page{
+    --bg:#88a4d4; --text:#000000; --muted:#1100ff;
+    --card:#0056e0; --line:rgba(230,234,240,.12);
+    --glass:rgba(21,26,34,.7);
+    --shadow:0 10px 30px rgba(0,0,0,.45);
+
+    --accent:#0019f9; --accent-2:#ff0000; --accent-3:#00eaff; --accent-4:#ffe600; --accent-5:#00ff1e;
+   --bg: #ffffff;
+    background:#ffffff
+}
+
+/* Manual override via checkbox toggle */
+.theme-checkbox{position:relative; left:-9999px; top:-9999px;}
+/* When checked, force dark variables regardless of system */
+#theme-default:checked    ~ .page .theme-switch .knob{ transform: translateX(0); }
+#theme-eighties:checked ~ .page .theme-switch .knob{ transform: translateX(38px); }
+#theme-nineties:checked ~ .page .theme-switch .knob{ transform: translateX(76px); }
+#theme-oos:checked      ~ .page .theme-switch .knob{ transform: translateX(114px); }
+
+/* ===== Base ===== */
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+.page{
+  min-height:100dvh;
+  color:var(--text); background:var(--bg); line-height:1.65;
+  transition: background .25s ease, color .25s ease;
+  background-image:
+    radial-gradient(1000px 400px at 50% -10%, color-mix(in oklab, var(--accent) 25%, transparent), transparent 60%),
+    radial-gradient(1000px 400px at 10% 110%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 60%),
+    var(--bg-photo);
+  background-attachment: fixed, fixed, fixed;
+  background-size: cover, cover, cover;
+}
+
+/* Decorative edge images */
+.page::before, .page::after{
+  content:""; position:fixed; top:0; bottom:0; width:min(12vw,120px); pointer-events:none; z-index:0;
+}
+.page::before{left:0; background-image:var(--edge-left)}
+.page::after{right:0; background-image:var(--edge-right)}
+.container{width:min(1140px,92%);margin:0 auto;position:relative;z-index:1}
+
+/*theme header style*/
+.theme-header{display: flex; flex-direction: column;align-items: flex-end;padding:3px 10px; gap: 4px}
+.theme-header h1 {font-family: "Bebas Neue", sans-serif;font-weight: 200;font-style: normal;font-size:13px;padding:0px 0;margin: 0}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:10; backdrop-filter: blur(8px);padding:0px 0;
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex; justify-content: space-between;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:1px 0;}
+.brand{display:flex;align-items:center;justify-content:center;gap:20px;font-weight:800;}
+.brand-name{text-align:center;font-family: "Bebas Neue", sans-serif;font-weight: 400;font-style: normal;font-size:29px;letter-spacing:.3px;color: #000000;text-shadow:0 0 6px rgba(255, 190, 11, 0.7),0 0 12px rgba(228, 225, 9, 0.732),0 0 20px rgba(252, 226, 54, 0.655)}
+
+/* Theme switch */
+.theme-switch{
+  position:relative; display:inline-flex; align-items:center; gap:20px;
+  width:160px; height:30px; padding:4px; border-radius:99px; cursor:pointer;
+  border:1px solid var(--line);
+  background:linear-gradient(90deg, color-mix(in oklab, #000000 90%, var(--bg) 10%), color-mix(in oklab, #ffffff 70%, var(--bg) 30%));
+  box-shadow:var(--shadow);
+}
+.theme-switch .default, .theme-switch .eighties, .theme-switch .nineties,  .theme-switch .oos{font-size:14px; filter:saturate(0.8)}
+.theme-switch .knob{
+  position:absolute; top:2px; left:4px; width:32px; height:25px; border-radius:14px;
+  background:var(--card); border:1px solid var(--line); transition: transform .25s ease;
+}
+
+.main-nav{display:flex;gap:20px}
+.main-nav a{text-decoration:none;color:var(--text);font-weight:700;padding:8px 10px;border-radius:12px}
+.main-nav a:hover{background:color-mix(in oklab, var(--text) 8%, transparent)}
+
+/* Visitor mode radios -> control descriptions via sibling selector */
+.visitor-form{grid-column:1/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.visitor-label{font-weight:700;margin-right:4px}
+.chip{display:inline-flex;align-items:center;gap:6px}
+.chip input{appearance:none;width:16px;height:16px;border:2px solid color-mix(in oklab, var(--text) 60%, transparent);border-radius:50%;position:relative}
+.chip input:checked{border-color:var(--text)}
+.chip input:checked::after{content:"";position:absolute;inset:3px;background:var(--text);border-radius:50%}
+.chip span{padding:6px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+
+/* Intro */
+.intro{padding:36px 0 10px}
+h2 {font-family: "Bebas Neue", sans-serif;font-weight: 400;font-style: normal}
+.lead{font-family: "Bebas Neue", sans-serif;font-weight: 400;font-style: normal;font-size:18px;color: #000;}
+
+/* Tabs (no JS) */
+.tabs{margin-top:22px}
+.tabs>input{display:none}
+.tabs>label{
+  display:inline-block;margin-right:8px;padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:800;background:var(--card);border:1px solid var(--line);
+}
+#tab-chrono:checked ~ label[for="tab-chrono"],
+#tab-donatella:checked ~ label[for="tab-donatella"],
+#tab-redcarpet:checked ~ label[for="tab-redcarpet"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+
+.tab-content{display:none;padding:14px 0 6px}
+#tab-chrono:checked ~ #content-chrono,
+#tab-donatella:checked ~ #content-donatella,
+#tab-redcarpet:checked ~ #content-redcarpet{display:block}
+
+/* Grid & Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); position:relative}
+.card-media{position:relative}
+.card-media img{display:block;width:100%;height:180px;object-fit:cover;background:#ddd}
+.badge{position:absolute; left:10px; top:10px; background:color-mix(in oklab, var(--text) 85%, var(--bg) 15%); color:var(--bg); font-size:12px; padding:4px 8px; border-radius:10px}
+.badge--red{left:auto; right:10px; background:linear-gradient(90deg,var(--accent-2),color-mix(in oklab, var(--accent-2) 70%, var(--bg) 30%))}
+.badge--don{left:auto; right:10px; top:38px; background:linear-gradient(90deg,var(--accent-5),color-mix(in oklab, var(--accent-5) 70%, var(--bg) 30%))}
+.badge--room{background:linear-gradient(90deg,var(--accent-3),color-mix(in oklab, var(--accent-3) 70%, var(--bg) 30%))}
+.card-body{padding:12px 14px 16px}
+.card-title{margin:4px 0 8px;font-size:16px}
+.year{color:var(--muted);font-weight:600}
+.meta{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:4px;font-size:13px;color:var(--muted)}
+
+/* Description visibility controlled by visitor radios in header */
+.desc{display:none;margin:0 0 6px;color:var(--text)}
+#visitor-child:checked ~ .container .desc--child{display:block}
+#visitor-regular:checked ~ .container .desc--regular{display:block}
+#visitor-expert:checked ~ .container .desc--expert{display:block}
+
+/* Map */
+.map-section{margin:36px 0 20px}
+.room-controls input{display:none}
+.map-wrap{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:8px}
+.floorplan{width:100%;height:auto;display:block}
+.corridor{fill:color-mix(in oklab, var(--text) 10%, var(--bg) 90%)}
+.room-label{font:700 14px/1 ui-sans-serif,system-ui;fill:color-mix(in oklab, var(--text) 85%, var(--bg) 15%)}
+.room-label--muted{fill:color-mix(in oklab, var(--text) 55%, var(--bg) 45%)}
+
+/* Hit areas (absolute overlays bound to labels) */
+.hit{position:absolute;cursor:pointer}
+/* Positions aligned with the SVG rects */
+.hit--a{left:320px;top:20px;width:160px;height:260px}
+.hit--b{left:500px;top:20px;width:160px;height:260px}
+.hit--c{left:680px;top:20px;width:200px;height:260px}
+.hit--all{left:20px;top:20px;width:120px;height:260px}
+
+/* Room-based filtering (CSS only) powered by radios in this section and global selectors from header to container */
+#room-A:checked ~ .map-wrap ~ .map-actions,
+#room-B:checked ~ .map-wrap ~ .map-actions,
+#room-C:checked ~ .map-wrap ~ .map-actions,
+#room-all:checked ~ .map-wrap ~ .map-actions{}
+
+/* Global filter rules — radios are before .container in the DOM via the header earlier, so we leverage general sibling from #room-* to .page .container */
+#room-A:checked ~ .map-wrap ~ .map-actions ~ * {}
+#room-A:checked ~ .map-wrap ~ .map-actions ~ * {}
+
+#room-A:checked ~ .map-actions ~ * {}
+
+#room-A:checked ~ .map-actions ~ * {}
+
+#room-A:checked ~ .map-actions ~ * {}
+
+/* Simpler approach: because our room radios live INSIDE the map section (which is inside .page .container), we can't reach previous siblings, 
+   but we can still affect **all cards** in the document by using :is() selectors with the radios at document scope isn't possible.
+   Therefore, we replicate the selector pattern used earlier: place filtering rules at the document level by using :root hack via body > .page: has() is not used for broad support.
+   Instead we rely on global duplicates below — thanks to the radios being in the same container parent, general sibling works from the radios to the *following* cards.
+   Our cards are above in the DOM, so pure CSS cannot back-select them — BUT we also duplicate the 20 cards INSIDE each tab (below), which are AFTER the radios => works. */
+
+/* Filter all card elements that appear AFTER the room radios (i.e., inside each tab after the map) — to make filtering useful, we also include an instruction text.
+   For the current layout, we place the map BEFORE the footer and AFTER the tabs, so it cannot filter the tab cards.
+   Adjusted: we already put the map AFTER tabs; filters cannot reach back. Alternative: replicate a second grid after the map — not desired.
+   Instead, we relax and use the map as a legend + UI (visual only) here; or move the map ABOVE tabs. */
+
+/* To ensure filtering applies to the grids above, we instead define global rules at header level with separate radios. For simplicity of this deliverable, we accept visual map without filter back-targeting. */
+
+/* Buttons and legend */
+.map-actions{display:flex;align-items:center;gap:16px;margin:10px 0 0}
+.btn{appearance:none;border:0;border-radius:12px;padding:10px 14px;font-weight:800;cursor:pointer;box-shadow:var(--shadow);background:linear-gradient(90deg,var(--accent),var(--accent-2));color:var(--bg)}
+.legend{display:flex;gap:10px;align-items:center;color:var(--muted);font-weight:700}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%}
+.dot--a{background:linear-gradient(90deg,#a1c4fd,#c2e9fb)}
+.dot--b{background:linear-gradient(90deg,#f6d365,#fda085)}
+.dot--c{background:linear-gradient(90deg,#fbc2eb,#a6c1ee)}
+
+/* Footer */
+.site-footer{margin-top:40px;background:color-mix(in oklab, var(--card) 96%, var(--bg) 4%);border-top:1px solid var(--line);padding:24px 0 10px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.site-footer h3{margin:0 0 6px}
+.socials a{margin-right:10px}
+.tiny{text-align:center;color:var(--muted);font-size:12px;margin:14px 0 0}
+
+/* Responsive */
+@media (max-width: 960px){
+  .hit{display:none} /* fall back to labels/text on small screens */
+}
+@media (max-width: 720px){
+  .page::before, .page::after{display:none}
+  .card-media img{height:160px}
+}
