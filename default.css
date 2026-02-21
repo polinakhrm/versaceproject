@@ -126,6 +126,26 @@ h2 {font-family: "Bebas Neue", sans-serif;font-weight: 400;font-style: normal}
   .item-image{flex:1 1 100%}
   .item-text{flex:1 1 100%}
 }
+.item-nav-buttons{
+  display:flex;
+  gap:16px;
+  margin-top:24px;
+  justify-content:flex-start
+}
+.item-nav-buttons .btn-back,
+.item-nav-buttons .btn-forward{
+  padding:10px 20px;
+  font-size:15px;
+  background-color:#b78330;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer
+}
+.item-nav-buttons .btn-back:hover,
+.item-nav-buttons .btn-forward:hover{
+  background-color:#9a6e28
+}
 .card{background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); position:relative}
 article.card{cursor:pointer}
 .card-media{position:relative}
