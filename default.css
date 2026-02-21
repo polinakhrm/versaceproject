@@ -47,6 +47,21 @@ html{scroll-behavior:smooth}
 .page::after{right:0; right:0; background-image:var(--edge-right); background-color:rgba(212, 175, 55, 0.05); background-position:right; filter:hue-rotate(180deg)}
 .container{width:min(1140px,92%);margin:0 auto;position:relative;z-index:1}
 
+/* Glass panel for main content (home, map, about only — not collection) */
+main.container:not(:has(.collection)){
+  flex:1 1 auto;
+  width:88%;
+  max-width:1140px;
+  margin:0 auto;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:2rem 2.5rem 3rem;
+  border-radius:0 0 12px 12px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.04);
+}
+main.container:not(:has(.collection)) + .site-footer{margin-top:0}
+
 /*theme header style*/
 .theme-header{display: none}
 
