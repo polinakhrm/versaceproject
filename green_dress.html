@@ -78,9 +78,10 @@
              </div>
            </div>
            <div class="item-nav-buttons">
-            <button type="button" class="btn-back" onclick="window.location.href='princess_diana.html'"">⬅</button>
-            <button type="button" class="btn-forward" onclick="window.location.href='butterfly_dress.html'"">⮕</button>
+            <button type="button" class="btn-back" onclick="navigate('back')">⬅</button>
+            <button type="button" class="btn-forward" onclick="navigate('forward')">⮕</button>
           </div>
+          <p id="current-path"></p>
           </div>
         </div>
       </section>
@@ -149,6 +150,41 @@
       // Update when selection changes
       select.addEventListener('change', updateText);
     })();
+
+    function navigate(direction) {
+
+      let path = localStorage.getItem('path');
+
+      if (direction === "forward") { //следующая страница
+        if (path === "0") {
+          window.location.href = "butterfly_dress.html";
+        } else if (path === "1") {
+          window.location.href = '';
+        } else if (path === "2") {
+          window.location.href = 'butterfly_dress.html';
+        }
+      }
+      else if (direction === "back") { //предыдущая страница
+        if (path === "0") {
+          window.location.href = 'princess_diana.html';
+        } else if (path === "1") {
+          window.location.href = '';
+        } else if (path === "2") {
+          window.location.href = 'pin_dress.html';
+        }
+      }
+    }
+
+  function currentPath() {
+
+    let path = localStorage.getItem('path');
+
+    if (path === "0") {document.getElementById("current-path").textContent = "Chronological";}
+    else if (path === "1") {document.getElementById("current-path").textContent = "Donatella";}
+    else if (path === "2") {document.getElementById("current-path").textContent = "Red Carpet";}
+  }
+
+  currentPath();
   </script>
 </body>
 </html>
