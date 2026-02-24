@@ -96,7 +96,7 @@ main.container:not(:has(.collection)) + .site-footer{margin-top:0}
 }
 
 .main-nav{display:flex;gap:20px}
-.main-nav a{text-decoration:none;color:#2A1A0F;font-weight:600;padding:10px 16px;border-radius:20px; position:relative; transition:all 0.3s ease; font-family:'Prata', serif; font-size:15px}
+.main-nav a{text-decoration:none;color:#2A1A0F;font-weight:600;padding:10px 16px;border-radius:20px; position:relative; transition:all 0.3s ease; font-family:'Great Vibes', cursive; font-size:22px}
 .main-nav a::before{content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent); border-radius:20px; opacity:0}
 .main-nav a:hover{background:rgba(212, 175, 55, 0.12); color:var(--accent); transform:translateY(-2px)}
 .main-nav a.active{background:linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05)); color:var(--accent); border-bottom:2px solid var(--rococo-gold)}
