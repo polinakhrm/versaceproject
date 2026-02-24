@@ -121,9 +121,9 @@ h2::after{content:''; position:absolute; bottom:0; left:0; width:100%; height:3p
 /* Path buttons */
 .main-path-btn {
   font-family: 'Great Vibes', cursive;
-  font-size: 1.8rem;
-  padding: 9px 18px;
-  border-radius: 18px;
+  font-size: 1.2rem;
+  padding: 5px 12px;
+  border-radius: 10px;
   background: rgba(255, 254, 245, 0.95);
   color: #2A1A0F;
   font-weight: 700;
