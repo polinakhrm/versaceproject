@@ -55,11 +55,14 @@
     <main class="container">
       <!-- Intro -->
       <section class="intro">
-        <h2>Red Carpet</h2>
+        <h2>Thank You and Goodbye!</h2>
         <p class="lead">
-          Explore legendary looks from the red carpets of various events, created by designers from the Versace fashion house. From the 1990s supermodel era to the global celebrity culture of the 2000s, the house consistently used bold cuts, dramatic embellishment, and sensual silhouettes to command attention. Many of these appearances transcended fashion, becoming media events that shaped trends, influenced pop culture, and strengthened the relationship between luxury branding and celebrity visibility. Through the red carpet, Versace established itself as a master of spectacle and modern glamour. 
+          Thank you for exploring this story with us. We hope this exhibition has offered new insight into the artistry, history, and influence of one of the most iconic fashion houses in the world.
         </p>
-        <button type="button" class="main-path-btn" onclick="window.location.href='chainmail_dress.html'">Start</button>
+        <p class="lead">
+          If you would like to explore the exhibition by following a different path, we invite you to return to the home page. 
+        </p>
+        <button type="button" class="main-path-btn" onclick="window.location.href='home.html'">Go to the home page</button>
       </section>
     </main>
 
@@ -92,19 +95,6 @@
     </footer>
   </div>
 
-  <script>
-    function choosePath(path) {
-      localStorage.setItem('path', path);
-      
-      if (path === 0) {
-        window.location.href = 'chronological_path.html';
-      } else if (path === 1) {
-        window.location.href = 'donatella_path.html';
-      } else if (path === 2) {
-        window.location.href = 'red_carpet_path.html';
-      }
-    }
-  </script>
 </body>
 </html>
 

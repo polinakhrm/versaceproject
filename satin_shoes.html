@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
   <script src="theme-switcher.js"></script>
+  <script src="current-path.js" defer></script>
 </head>
 <body>
   <!-- CSS-only theme toggle --> 
@@ -32,7 +33,7 @@
     <header class="site-header" id="home">
       <div class="container header-inner">
         <div class="brand">
-          <span class="brand-name">Eternal Versace</span>
+          <a href="home.html" class="brand-name">Eternal Versace</a>
         </div>
 
         <nav class="main-nav" aria-label="Primary">
@@ -159,7 +160,7 @@
         if (path === "0") {
           window.location.href = 'palazzo_bag.html';
         } else if (path === "1") {
-          window.location.href = '';
+          window.location.href = 'palazzo_bag.html';
         } else if (path === "2") {
           window.location.href = 'bandage_dress.html';
         }
@@ -168,23 +169,13 @@
         if (path === "0") {
           window.location.href = 'hm_collab.html';
         } else if (path === "1") {
-          window.location.href = '';
+          window.location.href = 'ceramics.html';
         } else if (path === "2") {
           window.location.href = 'red_carpet_path.html';
         }
       }
     }
 
-  function currentPath() {
-
-    let path = localStorage.getItem('path');
-
-    if (path === "0") {document.getElementById("current-path").textContent = "Chronological";}
-    else if (path === "1") {document.getElementById("current-path").textContent = "Donatella";}
-    else if (path === "2") {document.getElementById("current-path").textContent = "Red Carpet";}
-  }
-
-  currentPath();
   </script>
 </body>
 </html>

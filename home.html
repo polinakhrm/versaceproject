@@ -32,7 +32,7 @@
     <header class="site-header" id="home">
       <div class="container header-inner">
         <div class="brand">
-          <span class="brand-name">Eternal Versace</span>
+          <a href="home.html" class="brand-name">Eternal Versace</a>
         </div>
 
         <nav class="main-nav" aria-label="Primary">
@@ -65,7 +65,7 @@
         </p>
         <p class="lead">Select the path you want to explore the exhibition:</p>
         <button type="button" class="main-path-btn" onclick="choosePath(0)">Chronological</button>
-        <button type="button" class="main-path-btn" onclick="choosePath(1)">Donatella</button>
+        <button type="button" class="main-path-btn" onclick="choosePath(1)">Not just clothing</button>
         <button type="button" class="main-path-btn" onclick="choosePath(2)">Red Carpet</button>
       </section>
     </main>
@@ -106,7 +106,7 @@
       if (path === 0) {
         window.location.href = 'chronological_path.html';
       } else if (path === 1) {
-        window.location.href = 'donatella_path.html';
+        window.location.href = 'not_just_clothing_path.html';
       } else if (path === 2) {
         window.location.href = 'red_carpet_path.html';
       }
