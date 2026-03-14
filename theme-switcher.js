@@ -14,11 +14,17 @@
       return;
     }
 
+    // theme-oos uses future.css
+    function getStylesheetFilename(theme) {
+      return (theme === 'oos' ? 'future' : theme) + '.css';
+    }
+
     // Function to switch theme
     function switchTheme(theme) {
       if (stylesheet) {
-        stylesheet.href = theme + '.css';
+        stylesheet.href = getStylesheetFilename(theme);
         localStorage.setItem('theme', theme);
+        document.body.classList.toggle('future-theme', theme === 'oos');
         
         // Update the checked radio button
         const radio = document.getElementById('theme-' + theme);
@@ -44,7 +50,8 @@
       const radio = document.getElementById('theme-' + savedTheme);
       if (radio) {
         radio.checked = true;
-        stylesheet.href = savedTheme + '.css';
+        stylesheet.href = getStylesheetFilename(savedTheme);
+        document.body.classList.toggle('future-theme', savedTheme === 'oos');
       }
     } else {
       // Default to default theme if no preference saved
