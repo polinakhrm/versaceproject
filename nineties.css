@@ -156,7 +156,7 @@ a.brand-name {
   background: var(--accent-light);
   border: 1px solid #552288;
   transition: transform 0.25s ease;
- }
+}
 
 /* Nav — white underlined links on purple */
 .main-nav a {
@@ -235,7 +235,7 @@ h2::after { display: none; }
   max-width: 100%;
   margin: 0;
   width: 100%;
- }
+}
 
 .card {
   background: var(--forum-row);
@@ -580,4 +580,4 @@ article.card:hover {
 @media (max-width: 720px) {
   .page::before,
   .page::after { display: none; }
- }
+}
