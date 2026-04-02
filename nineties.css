@@ -133,29 +133,40 @@ a.brand-name {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   width: 160px;
-  height: 24px;
-  padding: 2px;
+  min-width: 160px;
+  height: 30px;
+  padding: 4px;
   border-radius: 0;
   cursor: pointer;
+  flex-shrink: 0;
+  overflow: visible;
   border: 1px solid #333333;
   border-top-color: #FFFFFF;
   border-left-color: #FFFFFF;
   background: #C0C0C0;
   box-shadow: inset 1px 1px 0 0 rgba(255,255,255,0.5);
 }
-.theme-switch .opt { font-size: 10px; color: var(--text); font-family: Verdana, Geneva, Arial, sans-serif; }
+.theme-switch .opt {
+  flex: 0 0 auto;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--text);
+  font-family: Verdana, Geneva, Arial, sans-serif;
+}
 .theme-switch .knob {
   position: absolute;
   top: 2px;
-  left: 2px;
+  left: 4px;
   width: 32px;
-  height: 18px;
+  height: 25px;
   border-radius: 0;
   background: var(--accent-light);
   border: 1px solid #552288;
-  transition: transform 0.25s ease;
+  pointer-events: none;
+  transition: transform 0.15s ease;
+  box-shadow: inset 1px 1px 0 0 rgba(255,255,255,0.4);
 }
 
 /* Nav — white underlined links on purple */
