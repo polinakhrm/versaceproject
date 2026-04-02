@@ -192,8 +192,7 @@ h2 {
   color: var(--accent);
   text-transform:uppercase;
   letter-spacing:0.12em;
-  border-left:6px double var(--accent);
-  padding-left:16px;
+  padding-left:0px;
 }
 
 /* Path buttons */
