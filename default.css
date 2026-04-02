@@ -587,10 +587,46 @@ article.card:hover{transform:rotate(0deg) translateY(-12px); box-shadow:4px 20px
 .site-footer h3{margin:0 0 6px; font-family:'Great Vibes', cursive; font-size:28px; color:#2A1A0F; font-style:italic}
 .tiny{text-align:center;color:#2A1A0F;font-size:12px;margin:14px 0 0; font-family:'Prata', serif}
 
-/* About Us specific styles */
+/* About Us styles */
 .about-content{padding:36px 0}
 .about-content h2{margin-bottom:20px; font-family:'Great Vibes', cursive; font-size:42px; color:#2A1A0F; font-style:italic}
+.about-content h3{margin:0; font-family:'Prata', serif; font-size:22px; color:#2A1A0F; line-height:1.25}
 .about-content p{margin-bottom:16px;line-height:1.8; font-family:'Prata', serif; color:#2A1A0F; font-size:16px}
+.creators{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:24px;align-items:stretch}
+.creator-card{
+  display:flex;flex-direction:column;min-height:100%;margin:0;
+  padding:26px 28px;
+  background:linear-gradient(165deg, rgba(255,253,248,0.96) 0%, rgba(248,240,228,0.9) 100%);
+  border:1px solid rgba(212,175,55,0.42);
+  border-radius:16px;
+  box-shadow:0 6px 28px rgba(42,26,15,0.07), inset 0 1px 0 rgba(255,255,255,0.85);
+}
+.creator-card h3{
+  margin:0 0 14px;padding-bottom:14px;
+  border-bottom:1px solid rgba(212,175,55,0.38);
+  font-size:24px;
+}
+.about-content .creator-bio{margin:0;flex:1 1 auto}
+.creator-links{
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  margin:20px 0 0;padding-top:18px;
+  border-top:1px solid rgba(42,26,15,0.12);
+}
+.creator-link{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 18px;border-radius:999px;
+  font-family:'Prata',serif;font-size:14px;font-weight:500;
+  text-decoration:none;color:#2A1A0F;
+  border:1px solid rgba(212,175,55,0.55);
+  background:rgba(255,255,255,0.78);
+  transition:background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.creator-link:visited{color:#3d2918}
+.creator-link:hover{
+  background:rgba(212,175,55,0.16);
+  border-color:rgba(184,140,55,0.8);
+  box-shadow:0 2px 12px rgba(212,175,55,0.22);
+}
 
 /* Responsive */
 @media (max-width: 960px){
