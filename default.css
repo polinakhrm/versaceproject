@@ -102,6 +102,20 @@ a.brand-name { text-decoration: none }
 .main-nav a:hover{background:rgba(212, 175, 55, 0.12); color:var(--accent); transform:translateY(-2px)}
 .main-nav a.active{background:linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05)); color:var(--accent); border-bottom:2px solid var(--rococo-gold)}
 
+/* About us dropdown menu */
+.about-menu-wrap{position:relative;display:inline-flex}
+.about-menu-trigger::after{content:" \25BE";font-size:0.8em}
+.about-menu-dropdown{
+  position:absolute;right:0;top:44px;min-width:170px;display:none;flex-direction:column;z-index:120;
+  background:var(--card);border:1px solid var(--rococo-gold);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;
+}
+.about-menu-wrap.open .about-menu-dropdown{display:flex}
+.about-menu-dropdown a{
+  text-decoration:none;color:#2A1A0F;padding:10px 12px;border-bottom:1px solid var(--line);font-weight:600;
+}
+.about-menu-dropdown a:last-child{border-bottom:none}
+.about-menu-dropdown a:hover{background:rgba(212, 175, 55, 0.12)}
+
 /* Visitor mode radios -> control descriptions via sibling selector */
 .visitor-form{grid-column:1/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .visitor-label{font-weight:700;margin-right:4px; font-family:'Prata', serif; color:#2A1A0F}

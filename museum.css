@@ -127,6 +127,20 @@ html{scroll-behavior:smooth}
 .main-nav a{text-decoration:none;color:var(--text);font-weight:700;padding:8px 10px;border-radius:12px}
 .main-nav a:hover{background:color-mix(in oklab, var(--text) 8%, transparent)}
 
+/* About us dropdown menu */
+.about-menu-wrap{position:relative;display:inline-flex}
+.about-menu-trigger::after{content:" \25BE";font-size:0.8em}
+.about-menu-dropdown{
+  position:absolute;right:0;top:44px;min-width:170px;display:none;flex-direction:column;z-index:120;
+  background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;
+}
+.about-menu-wrap.open .about-menu-dropdown{display:flex}
+.about-menu-dropdown a{
+  text-decoration:none;color:var(--text);padding:10px 12px;border-bottom:1px solid var(--line);font-weight:700;
+}
+.about-menu-dropdown a:last-child{border-bottom:none}
+.about-menu-dropdown a:hover{background:color-mix(in oklab, var(--text) 8%, transparent)}
+
 /* Visitor mode radios -> control descriptions via sibling selector */
 .visitor-form{grid-column:1/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .visitor-label{font-weight:700;margin-right:4px}
