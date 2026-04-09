@@ -837,6 +837,54 @@ article.card:hover {
 .metadata-table th,
 .metadata-table td { border: 1px solid var(--line); padding: 8px 10px; }
 
+/* Item image gallery (horizontal scroll / swipe) */
+.item-gallery { width: 100%; }
+.item-gallery-track {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.item-gallery-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  margin: 0;
+}
+.item-gallery-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+.item-gallery-prev,
+.item-gallery-next {
+  padding: 8px 18px;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+}
+.item-gallery-prev:disabled,
+.item-gallery-next:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.item-gallery-counter {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  min-width: 3.5em;
+  text-align: center;
+}
+
 /* Адаптив */
 @media (max-width: 960px) { .hit { display: none; } }
 @media (max-width: 720px) {

@@ -59,7 +59,24 @@
         
         <div class="item-content">
           <div class="item-image">
-            <img src="images/exhibits/first_collection.png">
+            <div class="item-gallery" role="region" aria-roledescription="carousel" aria-label="Brown Leather Pleated Trench Coat — photo gallery">
+              <div class="item-gallery-track" id="coat-gallery-track">
+                <figure class="item-gallery-slide">
+                  <img src="images/exhibits/first_collection.png" alt="Brown leather pleated trench coat — main view">
+                </figure>
+                <figure class="item-gallery-slide">
+                  <img src="images/coat_1.png" alt="Brown leather pleated trench coat — detail 1">
+                </figure>
+                <figure class="item-gallery-slide">
+                  <img src="images/coat_2.png" alt="Brown leather pleated trench coat — detail 2">
+                </figure>
+              </div>
+              <div class="item-gallery-nav">
+                <button type="button" class="item-gallery-prev" aria-label="Previous photo">⬅</button>
+                <span class="item-gallery-counter" id="coat-gallery-counter" aria-live="polite">1 / 3</span>
+                <button type="button" class="item-gallery-next" aria-label="Next photo">⮕</button>
+              </div>
+            </div>
           </div>
           <div class="item-text">
             <select class="visitor-select" id="visitor-select" style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid var(--line); font-size: 16px; background: #ffffff; color: var(--text);">
@@ -163,6 +180,48 @@
       
       // Update when selection changes
       select.addEventListener('change', updateText);
+    })();
+
+    (function() {
+      const track = document.getElementById('coat-gallery-track');
+      const counter = document.getElementById('coat-gallery-counter');
+      const prev = document.querySelector('.item-gallery-prev');
+      const next = document.querySelector('.item-gallery-next');
+      if (!track || !counter || !prev || !next) return;
+
+      const slides = track.querySelectorAll('.item-gallery-slide');
+      const total = slides.length;
+      if (total === 0) return;
+
+      function currentIndex() {
+        const w = track.clientWidth || 1;
+        return Math.round(track.scrollLeft / w);
+      }
+
+      function updateCounter() {
+        const i = Math.min(Math.max(currentIndex(), 0), total - 1);
+        counter.textContent = (i + 1) + ' / ' + total;
+        prev.disabled = i <= 0;
+        next.disabled = i >= total - 1;
+      }
+
+      function goTo(index) {
+        const w = track.clientWidth;
+        if (!w) return;
+        track.scrollTo({ left: index * w, behavior: 'smooth' });
+      }
+
+      prev.addEventListener('click', function() {
+        goTo(currentIndex() - 1);
+      });
+      next.addEventListener('click', function() {
+        goTo(currentIndex() + 1);
+      });
+      track.addEventListener('scroll', function() {
+        window.requestAnimationFrame(updateCounter);
+      }, { passive: true });
+      window.addEventListener('resize', updateCounter);
+      updateCounter();
     })();
 
     function navigate(direction) {
