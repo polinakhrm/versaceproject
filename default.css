@@ -305,6 +305,11 @@ article.card:hover{transform:rotate(0deg) translateY(-12px); box-shadow:4px 20px
   box-shadow:0 2px 12px rgba(212,175,55,0.22);
 }
 
+/* Item metadata table (e.g. exhibit details) */
+.metadata-table { border-collapse: collapse; width: 100%; font-size: 0.8125rem; }
+.metadata-table th,
+.metadata-table td { border: 1px solid var(--line); padding: 8px 10px; }
+
 /* Responsive */
 @media (max-width: 720px){
   .page::before, .page::after{display:none}

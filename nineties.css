@@ -595,6 +595,11 @@ article.card:hover {
 
 #current-path { color: var(--muted); font-size: 10px; font-family: Verdana, Geneva, Arial, sans-serif; }
 
+/* Item metadata table (e.g. exhibit details) */
+.metadata-table { border-collapse: collapse; width: 100%; font-size: 0.8125rem; }
+.metadata-table th,
+.metadata-table td { border: 1px solid var(--line); padding: 8px 10px; }
+
 /* Scrollbar — grey, subtle border */
 ::-webkit-scrollbar { width: 14px; height: 14px; background: #E0DCE4; border: 1px solid #999999; }
 ::-webkit-scrollbar-thumb {

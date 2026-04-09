@@ -374,6 +374,11 @@ h2 {
   box-shadow:0 0 18px color-mix(in oklab, var(--accent) 45%, transparent);
 }
 
+/* Item metadata table (e.g. exhibit details) */
+.metadata-table { border-collapse: collapse; width: 100%; font-size: 0.8125rem; }
+.metadata-table th,
+.metadata-table td { border: 1px solid var(--line); padding: 8px 10px; }
+
 /* Responsive */
 @media (max-width: 720px){
   .page::before, .page::after{display:none}

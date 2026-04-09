@@ -143,6 +143,11 @@ h2 {font-family: "Bebas Neue", sans-serif;font-weight: 400;font-style: normal}
 .socials a{margin-right:10px}
 .tiny{text-align:center;color:var(--muted);font-size:12px;margin:14px 0 0}
 
+/* Item metadata table (e.g. exhibit details) */
+.metadata-table { border-collapse: collapse; width: 100%; font-size: 0.8125rem; }
+.metadata-table th,
+.metadata-table td { border: 1px solid var(--line); padding: 8px 10px; }
+
 @media (max-width: 720px){
   .card-media img{height:160px}
 }
