@@ -59,7 +59,21 @@
         
         <div class="item-content">
           <div class="item-image">
-            <img src="images/exhibits/elton_john.png" alt="Elton John’s Suit" />
+            <div class="item-gallery" role="region" aria-roledescription="carousel" aria-label="Elton John's Suit - photo gallery">
+              <div class="item-gallery-track" id="elton-gallery-track">
+                <figure class="item-gallery-slide">
+                  <img src="images/exhibits/elton_john.png" alt="Elton John's Suit - main view" />
+                </figure>
+                <figure class="item-gallery-slide">
+                  <img src="images/elton_1.avif" alt="Elton John's Suit - detail 1" />
+                </figure>
+              </div>
+              <div class="item-gallery-nav">
+                <button type="button" class="item-gallery-prev" aria-label="Previous photo">⬅</button>
+                <span class="item-gallery-counter" id="elton-gallery-counter" aria-live="polite">1 / 2</span>
+                <button type="button" class="item-gallery-next" aria-label="Next photo">⮕</button>
+              </div>
+            </div>
           </div>
           <div class="item-text">
             <select class="visitor-select" id="visitor-select" style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid var(--line); font-size: 16px; background: #ffffff; color: var(--text);">
@@ -92,8 +106,8 @@
             </table>
           </details>
            <div class="item-nav-buttons">
-            <button type="button" class="btn-back" onclick="navigate('back')">⬅</button>
-            <button type="button" class="btn-forward" onclick="navigate('forward')">⮕</button>
+            <button type="button" class="btn-back" onclick="navigate('back')">⬅ Back</button>
+            <button type="button" class="btn-forward" onclick="navigate('forward')">Forward ⮕</button>
           </div>
           <p id="current-path"></p>
           </div>
@@ -163,6 +177,48 @@
       
       // Update when selection changes
       select.addEventListener('change', updateText);
+    })();
+
+    (function() {
+      const track = document.getElementById('elton-gallery-track');
+      const counter = document.getElementById('elton-gallery-counter');
+      const prev = document.querySelector('.item-gallery-prev');
+      const next = document.querySelector('.item-gallery-next');
+      if (!track || !counter || !prev || !next) return;
+
+      const slides = track.querySelectorAll('.item-gallery-slide');
+      const total = slides.length;
+      if (total === 0) return;
+
+      function currentIndex() {
+        const w = track.clientWidth || 1;
+        return Math.round(track.scrollLeft / w);
+      }
+
+      function updateCounter() {
+        const i = Math.min(Math.max(currentIndex(), 0), total - 1);
+        counter.textContent = (i + 1) + ' / ' + total;
+        prev.disabled = i <= 0;
+        next.disabled = i >= total - 1;
+      }
+
+      function goTo(index) {
+        const w = track.clientWidth;
+        if (!w) return;
+        track.scrollTo({ left: index * w, behavior: 'smooth' });
+      }
+
+      prev.addEventListener('click', function() {
+        goTo(currentIndex() - 1);
+      });
+      next.addEventListener('click', function() {
+        goTo(currentIndex() + 1);
+      });
+      track.addEventListener('scroll', function() {
+        window.requestAnimationFrame(updateCounter);
+      }, { passive: true });
+      window.addEventListener('resize', updateCounter);
+      updateCounter();
     })();
 
     function navigate(direction) {
