@@ -269,6 +269,7 @@ article.card:hover{transform:rotate(0deg) translateY(-12px); box-shadow:4px 20px
 .about-content h2{margin-bottom:20px; font-family:'Great Vibes', cursive; font-size:42px; color:#2A1A0F; font-style:italic}
 .about-content h3{margin:0; font-family:'Prata', serif; font-size:22px; color:#2A1A0F; line-height:1.25}
 .about-content p{margin-bottom:16px;line-height:1.8; font-family:'Prata', serif; color:#2A1A0F; font-size:16px}
+.disclaimer-page .about-content a{color:#5a2f0f}
 .creators{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:24px;align-items:stretch}
 .creator-card{
   display:flex;flex-direction:column;min-height:100%;margin:0;
