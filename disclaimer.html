@@ -14,7 +14,28 @@
     .about-content .disclaimer-refs h3 { margin-top: 24px; margin-bottom: 12px; }
     .about-content .disclaimer-refs dl { margin: 0 0 8px; font-family: 'Prata', serif; font-size: 16px; color: #2A1A0F; line-height: 1.65; }
     .about-content .disclaimer-refs dd { margin: 6px 0 0 0; padding-left: 0; }
-    .about-content .disclaimer-refs a { text-decoration: underline; text-underline-offset: 2px; }
+    .about-content .disclaimer-refs a { text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+
+    /* Per-theme high-contrast link colors */
+    #theme-default:checked ~ .page .about-content .disclaimer-refs a { color: #5a2f0f; }
+    #theme-default:checked ~ .page .about-content .disclaimer-refs a:visited { color: #6d3b18; }
+    #theme-default:checked ~ .page .about-content .disclaimer-refs a:hover,
+    #theme-default:checked ~ .page .about-content .disclaimer-refs a:focus-visible { color: #2a1a0f; }
+
+    #theme-eighties:checked ~ .page .about-content .disclaimer-refs a { color: #ffe08a; }
+    #theme-eighties:checked ~ .page .about-content .disclaimer-refs a:visited { color: #f7cf67; }
+    #theme-eighties:checked ~ .page .about-content .disclaimer-refs a:hover,
+    #theme-eighties:checked ~ .page .about-content .disclaimer-refs a:focus-visible { color: #fff4bf; }
+
+    #theme-nineties:checked ~ .page .about-content .disclaimer-refs a { color: #2f0a67; }
+    #theme-nineties:checked ~ .page .about-content .disclaimer-refs a:visited { color: #4a178f; }
+    #theme-nineties:checked ~ .page .about-content .disclaimer-refs a:hover,
+    #theme-nineties:checked ~ .page .about-content .disclaimer-refs a:focus-visible { color: #663399; }
+
+    #theme-oos:checked ~ .page .about-content .disclaimer-refs a { color: #9be7ff; }
+    #theme-oos:checked ~ .page .about-content .disclaimer-refs a:visited { color: #7fd7ff; }
+    #theme-oos:checked ~ .page .about-content .disclaimer-refs a:hover,
+    #theme-oos:checked ~ .page .about-content .disclaimer-refs a:focus-visible { color: #d3f4ff; }
   </style>
 </head>
 <body>
@@ -89,7 +110,7 @@
         </p>
 
         <p>
-          Exhibit pages are indexed in our <a href="collection.html">Collection</a>. The following links go to official brand pages, museums, or established reference sources for each highlighted object or theme.
+          Exhibit pages are indexed in our Collection. The following links go to official brand pages, museums, or established reference sources for each highlighted object or theme.
         </p>
 
         <div class="disclaimer-refs">
