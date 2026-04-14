@@ -294,6 +294,10 @@ h2 {
   letter-spacing:1px;
   font-family: 'Antonio', 'Unica One', sans-serif;
 }
+@keyframes map-pulse-80s{0%,100%{box-shadow:0 0 14px rgba(191,167,106,.55)}50%{box-shadow:0 0 26px rgba(191,167,106,.9)}}
+.map-wrapper .hotspot{background:var(--accent);border:3px solid #0a0a0a;box-shadow:0 0 16px rgba(191,167,106,.45);animation:map-pulse-80s 2s infinite}
+.map-wrapper .hotspot:hover{background:#fff;box-shadow:0 0 28px var(--accent);animation:none}
+.legend .legend-dot{border-radius:50%;background:var(--accent);border:3px solid #0a0a0a;box-shadow:0 0 12px rgba(191,167,106,.5)}
 
 /* Footer */
 .site-footer{
