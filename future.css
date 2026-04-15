@@ -460,9 +460,13 @@ article.card:hover {
   font-size: 16px;
   font-family: 'Rajdhani', sans-serif;
   background: rgba(0, 0, 0, 0.3);
-  color: var(--text);
+  color: #000000 !important;
   outline: none;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.visitor-select option,
+.item-text select.visitor-select option {
+  color: #000000;
 }
 .visitor-select:focus,
 .item-text select.visitor-select:focus {
