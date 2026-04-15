@@ -244,6 +244,7 @@ a.brand-name:hover { text-shadow: 0 0 20px var(--glow-cyan), 0 0 40px var(--glow
   background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent-5) 80%, transparent);
   box-shadow: 0 0 10px var(--glow-cyan);
 }
+.intro::after { content: ""; display: block; clear: both; }
 
 h2 {
   font-family: 'Orbitron', sans-serif;
@@ -267,7 +268,20 @@ h2::after {
   box-shadow: 0 0 10px var(--glow-cyan);
 }
 .lead { font-family: 'Rajdhani', sans-serif; font-size: 18px; color: var(--text); line-height: 1.8; letter-spacing: 0.3px; opacity: 0.9; }
+.intro-media { margin: 0 0 20px; }
+.intro-media {
+  display: block;
+  float: right;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 0 18px 32px;
+  border-radius: 14px;
+  border: 1px solid rgba(76, 201, 240, 0.35);
+  box-shadow: 0 0 24px rgba(76, 201, 240, 0.2), 0 8px 28px rgba(0, 0, 0, 0.35);
+}
 
+
+.intro h2{margin-top:0}
 /* Кнопки путей */
 .main-path-btn {
   font-family: 'Orbitron', sans-serif;

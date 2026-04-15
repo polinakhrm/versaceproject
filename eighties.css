@@ -146,6 +146,7 @@ a.brand-name { text-decoration: none }
 
 /* Intro */
 .intro{padding:36px 0 10px; position:relative}
+.intro::after{content:""; display:block; clear:both}
 h2 {
   font-family: 'Antonio', 'Unica One', 'Futura', Arial, sans-serif;
   font-weight: 700;
@@ -166,7 +167,20 @@ h2 {
   letter-spacing:0.12em;
   padding-left:0px;
 }
+.intro-media{margin:0 0 20px}
+.intro-media{
+  display:block;
+  float:right;
+  width:100%;
+  max-width:460px;
+  margin:0 0 18px 32px;
+  border-radius:0;
+  border:3px solid #000000;
+  box-shadow:6px 6px 0 #bfa76a, 0 0 18px rgba(191,167,106,0.3);
+}
 
+
+.intro h2{margin-top:0}
 /* Path buttons */
 .main-path-btn {
   font-family: 'Antonio', 'Unica One', 'Futura', Arial, sans-serif;
