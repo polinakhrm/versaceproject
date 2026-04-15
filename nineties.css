@@ -23,9 +23,9 @@
 .theme-radio { position: fixed; left: -9999px; top: -9999px; }
 
 #theme-default:checked ~ .page .theme-switch .knob { transform: translateX(0); }
-#theme-eighties:checked ~ .page .theme-switch .knob { transform: translateX(38px); }
-#theme-nineties:checked ~ .page .theme-switch .knob { transform: translateX(76px); }
-#theme-oos:checked ~ .page .theme-switch .knob { transform: translateX(114px); }
+#theme-eighties:checked ~ .page .theme-switch .knob { transform: translateX(40px); }
+#theme-nineties:checked ~ .page .theme-switch .knob { transform: translateX(80px); }
+#theme-oos:checked ~ .page .theme-switch .knob { transform: translateX(120px); }
 
 /* ===== Base ===== */
 * { box-sizing: border-box; }
@@ -88,7 +88,6 @@ main.container:not(:has(.collection)) {
 }
 main.container:not(:has(.collection)) + .site-footer { margin-top: 0; }
 
-.theme-header { display: none; }
 
 /* ===== Header — purple bar, black border ===== */
 .site-header {
@@ -128,13 +127,15 @@ a.brand-name {
 /* Theme switcher — 3D bevel button (same geometry as default/eighties/future) */
 .theme-switch {
   position: relative;
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  gap: 20px;
-  width: 160px;
-  min-width: 160px;
-  height: 30px;
-  padding: 4px;
+  justify-items: center;
+  gap: 0;
+  width: 168px;
+  min-width: 168px;
+  height: 32px;
+  padding: 3px 4px;
   border-radius: 0;
   cursor: pointer;
   flex-shrink: 0;
@@ -146,18 +147,18 @@ a.brand-name {
   box-shadow: inset 1px 1px 0 0 rgba(255,255,255,0.5);
 }
 .theme-switch .opt {
-  flex: 0 0 auto;
   font-size: 14px;
   line-height: 1;
   color: var(--text);
   font-family: Verdana, Geneva, Arial, sans-serif;
+  z-index: 1;
 }
 .theme-switch .knob {
   position: absolute;
-  top: 2px;
+  top: 3px;
   left: 4px;
-  width: 32px;
-  height: 25px;
+  width: 30px;
+  height: 24px;
   border-radius: 0;
   background: var(--accent-light);
   border: 1px solid #552288;

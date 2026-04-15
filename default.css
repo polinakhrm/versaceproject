@@ -15,9 +15,9 @@
 
 /* Theme switch knob position */
 #theme-default:checked ~ .page .theme-switch .knob{ transform: translateX(0); }
-#theme-eighties:checked ~ .page .theme-switch .knob{ transform: translateX(38px); }
-#theme-nineties:checked ~ .page .theme-switch .knob{ transform: translateX(76px); }
-#theme-oos:checked ~ .page .theme-switch .knob{ transform: translateX(114px); }
+#theme-eighties:checked ~ .page .theme-switch .knob{ transform: translateX(40px); }
+#theme-nineties:checked ~ .page .theme-switch .knob{ transform: translateX(80px); }
+#theme-oos:checked ~ .page .theme-switch .knob{ transform: translateX(120px); }
 
 /* ===== Base Styles ===== */
 *{box-sizing:border-box}
@@ -61,8 +61,6 @@ main.container:not(:has(.collection)){
 }
 main.container:not(:has(.collection)) + .site-footer{margin-top:0}
 
-/*theme header style*/
-.theme-header{display: none}
 
 /* Header */
 .site-header{
@@ -83,15 +81,15 @@ a.brand-name { text-decoration: none }
 
 /* Theme switch */
 .theme-switch{
-  position:relative; display:inline-flex; align-items:center; gap:20px;
-  width:160px; height:30px; padding:4px; border-radius:99px; cursor:pointer;
+  position:relative; display:grid; grid-template-columns:repeat(4,1fr); align-items:center; justify-items:center; gap:0;
+  width:168px; height:32px; padding:3px 4px; border-radius:99px; cursor:pointer;
   border:1.5px solid var(--rococo-gold);
   background:linear-gradient(90deg, rgba(212, 175, 55, 0.08), rgba(229, 213, 204, 0.1));
   box-shadow:inset 0 2px 8px rgba(212, 175, 55, 0.1), 0 4px 12px rgba(212, 175, 55, 0.1);
 }
-.theme-switch .opt{font-size:14px; filter:saturate(0.9); color:var(--text)}
+.theme-switch .opt{font-size:14px; line-height:1; filter:saturate(0.9); color:var(--text); z-index:1}
 .theme-switch .knob{
-  position:absolute; top:2px; left:4px; width:32px; height:25px; border-radius:14px;
+  position:absolute; top:3px; left:4px; width:30px; height:24px; border-radius:14px;
   background:var(--rococo-gold); border:1px solid var(--rococo-gold); transition: transform .25s ease; box-shadow:0 2px 8px rgba(212, 175, 55, 0.3);
 }
 
