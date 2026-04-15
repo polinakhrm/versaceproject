@@ -112,15 +112,6 @@ a.brand-name { text-decoration: none }
 .about-menu-dropdown a:last-child{border-bottom:none}
 .about-menu-dropdown a:hover{background:rgba(212, 175, 55, 0.12)}
 
-/* Visitor mode radios -> control descriptions via sibling selector */
-.visitor-form{grid-column:1/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.visitor-label{font-weight:700;margin-right:4px; font-family:'Prata', serif; color:#2A1A0F}
-.chip{display:inline-flex;align-items:center;gap:6px}
-.chip input{appearance:none;width:16px;height:16px;border:2px solid color-mix(in oklab, var(--text) 60%, transparent);border-radius:50%;position:relative}
-.chip input:checked{border-color:var(--text)}
-.chip input:checked::after{content:"";position:absolute;inset:3px;background:var(--text);border-radius:50%}
-.chip span{padding:6px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line); font-family:'Prata', serif}
-
 /* Intro */
 .intro{padding:40px 0 15px; position:relative}
 .intro::before{content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--rococo-gold) 20%, var(--rococo-gold) 80%, transparent)}
@@ -129,7 +120,6 @@ h2 {font-family: 'Great Vibes', cursive;font-weight: 400;font-style: normal; pos
 h2::before{content:'◆'; position:absolute; top:-18px; left:0; font-size:14px; color:var(--rococo-gold); margin-right:8px}
 h2::after{content:''; position:absolute; bottom:0; left:0; width:100%; height:3px; background:linear-gradient(90deg, var(--rococo-gold) 0%, rgba(212, 175, 55, 0.3) 50%, transparent 100%)}
 .lead{font-family: 'Prata', 'Georgia', 'Garamond', serif;font-weight: 400;font-style: italic;font-size:18px;color: #3A2A1F; line-height:1.8; letter-spacing:0.3px}
-.intro-media{margin:0 0 20px}
 .intro-media{
   display:block;
   float:right;
@@ -163,29 +153,6 @@ h2::after{content:''; position:absolute; bottom:0; left:0; width:100%; height:3p
   transform: translateY(-3px) scale(1.04) rotate(-1deg);
   box-shadow: 0 9px 18px rgba(212, 175, 55, 0.28);
 }
-
-/* Tabs (no JS) */
-.tabs{margin-top:28px}
-.tabs>input{display:none}
-.tabs>label{
-  display:inline-block;margin-right:10px;margin-bottom:8px;padding:14px 22px;border-radius:20px;cursor:pointer;font-weight:600;background:linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);border:1.5px solid var(--rococo-accent); font-family: 'Prata', serif; transition:all 0.3s ease; position:relative; overflow:hidden; color:#2A1A0F; font-size:16px}
-.tabs>label::before{content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05)); opacity:0; transition:opacity 0.3s ease; border-radius:20px}
-.tabs>label:hover::before{opacity:1}
-.tabs>label:hover{transform:translateY(-2px); box-shadow:0 6px 16px rgba(212, 175, 55, 0.15)}
-#tab-all:checked ~ label[for="tab-all"],
-#tab-chrono:checked ~ label[for="tab-chrono"],
-#tab-donatella:checked ~ label[for="tab-donatella"],
-#tab-redcarpet:checked ~ label[for="tab-redcarpet"]{background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:var(--bg);border-color:var(--accent); box-shadow:0 8px 20px rgba(212, 175, 55, 0.25)}
-
-.tab-content{display:none;padding:14px 0 6px}
-/* Show all tabs when "Show All" is selected */
-#tab-all:checked ~ #content-chrono,
-#tab-all:checked ~ #content-donatella,
-#tab-all:checked ~ #content-redcarpet{display:block}
-/* Show specific tab when selected */
-#tab-chrono:checked ~ #content-chrono{display:block}
-#tab-donatella:checked ~ #content-donatella{display:block}
-#tab-redcarpet:checked ~ #content-redcarpet{display:block}
 
 /* Grid & Cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}

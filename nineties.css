@@ -234,7 +234,6 @@ h2 {
 h2::before,
 h2::after { display: none; }
 .lead { font-size: 11px; color: var(--text); line-height: 1.5; font-family: Verdana, Geneva, Arial, sans-serif; }
-.intro-media { margin: 0 0 12px; }
 .intro-media {
   display: block;
   float: right;

@@ -215,23 +215,6 @@ a.brand-name:hover { text-shadow: 0 0 20px var(--glow-cyan), 0 0 40px var(--glow
 .about-menu-dropdown a:last-child{border-bottom:none}
 .about-menu-dropdown a:hover{background:rgba(76, 201, 240, 0.15);color:var(--accent);transform:none;box-shadow:none}
 
-/* Visitor mode */
-.visitor-form { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.visitor-label { font-weight: 700; margin-right: 4px; font-family: 'Rajdhani', sans-serif; color: var(--text); }
-.chip { display: inline-flex; align-items: center; gap: 6px; }
-.chip input {
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--line);
-  border-radius: 50%;
-  position: relative;
-  background: transparent;
-}
-.chip input:checked { border-color: var(--accent); box-shadow: 0 0 10px var(--glow-cyan); }
-.chip input:checked::after { content: ''; position: absolute; inset: 3px; background: var(--accent); border-radius: 50%; }
-.chip span { padding: 6px 10px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-family: 'Rajdhani', sans-serif; }
-
 /* Intro, заголовки */
 .intro { padding: 40px 0 15px; position: relative; }
 .intro::before {
@@ -268,7 +251,6 @@ h2::after {
   box-shadow: 0 0 10px var(--glow-cyan);
 }
 .lead { font-family: 'Rajdhani', sans-serif; font-size: 18px; color: var(--text); line-height: 1.8; letter-spacing: 0.3px; opacity: 0.9; }
-.intro-media { margin: 0 0 20px; }
 .intro-media {
   display: block;
   float: right;
@@ -303,47 +285,6 @@ h2::after {
   box-shadow: 0 0 30px var(--glow-cyan), 0 0 50px rgba(76, 201, 240, 0.2);
   background: rgba(76, 201, 240, 0.25);
 }
-
-/* Вкладки (Collection) */
-.tabs { margin-top: 28px; }
-.tabs > input { display: none; }
-.tabs > label {
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 8px;
-  padding: 14px 22px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1.5px solid var(--line);
-  font-family: 'Rajdhani', sans-serif;
-  transition: all 0.3s ease;
-  color: var(--text);
-  font-size: 16px;
-}
-.tabs > label:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 20px var(--glow-cyan);
-  transform: translateY(-2px);
-}
-#tab-all:checked ~ label[for="tab-all"],
-#tab-chrono:checked ~ label[for="tab-chrono"],
-#tab-donatella:checked ~ label[for="tab-donatella"],
-#tab-redcarpet:checked ~ label[for="tab-redcarpet"] {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: var(--bg);
-  border-color: var(--accent);
-  box-shadow: 0 0 25px var(--glow-cyan);
-}
-
-.tab-content { display: none; padding: 14px 0 6px; }
-#tab-all:checked ~ #content-chrono,
-#tab-all:checked ~ #content-donatella,
-#tab-all:checked ~ #content-redcarpet { display: block; }
-#tab-chrono:checked ~ #content-chrono { display: block; }
-#tab-donatella:checked ~ #content-donatella { display: block; }
-#tab-redcarpet:checked ~ #content-redcarpet { display: block; }
 
 /* Сетка и карточки коллекции */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }

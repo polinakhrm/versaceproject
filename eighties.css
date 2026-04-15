@@ -167,7 +167,6 @@ h2 {
   letter-spacing:0.12em;
   padding-left:0px;
 }
-.intro-media{margin:0 0 20px}
 .intro-media{
   display:block;
   float:right;
@@ -205,16 +204,6 @@ h2 {
   transform: translateY(-3px) scale(1.04);
   box-shadow: 0 9px 18px rgba(191,167,106,0.28), 4px 4px 0px var(--accent);
 }
-
-.tab-content{display:none;padding:14px 0 6px}
-/* Show all tabs when "Show All" is selected */
-#tab-all:checked ~ #content-chrono,
-#tab-all:checked ~ #content-donatella,
-#tab-all:checked ~ #content-redcarpet{display:block}
-/* Show specific tab when selected */
-#tab-chrono:checked ~ #content-chrono{display:block}
-#tab-donatella:checked ~ #content-donatella{display:block}
-#tab-redcarpet:checked ~ #content-redcarpet{display:block}
 
 /* Grid & Cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
